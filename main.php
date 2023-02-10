@@ -1,6 +1,6 @@
 <?php
 //1. ensure this code runs only after a POST from AT
-if (!empty($_POST)) {
+//if (!empty($_POST)) {
     //call dependencies
     require_once('functions.php');
     require_once('dbConnector.php');
@@ -45,6 +45,10 @@ if (!empty($_POST)) {
     // Get menu level from ussd_string reply
     $level = count($ussd_string_exploded);
 	
+	if ($level = 0){
+		//serve the main menu when the user first dials the ussd code
+		$response = $openingMenu;
+	}
 
-}
+//}
 ?>
